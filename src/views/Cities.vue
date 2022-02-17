@@ -1,28 +1,27 @@
 <template>
-  <div class="home">
-    <div class="virsus">
-      <h1 id="title">šalys</h1>
-      <button type="button" id="add" @click="showModal">+</button>
-      <Modal
-        v-show="isModalVisible"
-        @close="closeModal"
-        prop_title="Pridėti šalį"
-        prop_type="country"
-        prop_post_url="https://akademija.teltonika.lt/countries_api/api/countries"
-      />
-    </div>
-    <countries-list />
+<div class="cities">
+<div class="virsus">
+    <h1 id="title">{{country}}</h1>
+    <button type="button" id="add" @click="showModal">+</button>
+    <Modal
+      v-show="isModalVisible"
+      @close="closeModal"
+      prop_title="Pridėti miestą"
+      prop_type="city"
+      :prop_post_url="countryLink"
+    />
   </div>
+<cities-list :prop_country="countryLink"/>
+</div>
 </template>
-
 <script>
+//import axios from "axios";
 import Modal from "@/components/Modal.vue";
-import CountriesList from "@/components/CountriesList.vue";
-
+import CitiesList from "@/components/CitiesList.vue";
 export default {
-  name: "Home",
+  name: "Cities",
   components: {
-    CountriesList,
+    CitiesList,
     Modal,
   },
   data() {
@@ -38,9 +37,22 @@ export default {
       this.isModalVisible = false;
     },
   },
+  props:
+  {
+    countryLink: {
+      type: String,
+      default: "",
+      require: true,
+    },
+    country: {
+      type: String,
+      default: "Miestai",
+      require: true,
+    }
+  }
+
 };
 </script>
-
 <style scoped>
 h1#title {
   font-family: Oswald;
@@ -51,7 +63,7 @@ h1#title {
   letter-spacing: 0.016em;
   text-transform: uppercase;
   color: #5c5c5c;
-  margin: 7vh 1vw 3vh -9vw;
+  margin: 7vh 1vw 3vh -6vw;
   display: inline-block;
   vertical-align: middle;
   
@@ -80,3 +92,4 @@ button#add {
   /* background-color: aqua; */
 }
 </style>
+

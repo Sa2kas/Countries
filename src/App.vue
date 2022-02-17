@@ -1,14 +1,13 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="header">
+      <img id="logo" src="./assets/Teltonika.png" alt="Teltonika" />
     </div>
     <router-view />
   </div>
 </template>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,16 +16,15 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+#header {
+  height: 71px;
+  background-color: #0054a6;
+  width: auto;
+  text-align: left;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+#logo {
+  height: 28px;
+  margin-top: 1.25rem;
+  margin-left: 13vw;
 }
 </style>
