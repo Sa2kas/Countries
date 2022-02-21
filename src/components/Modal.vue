@@ -166,16 +166,17 @@ export default {
   position: fixed;
   top: auto;
   left: auto;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   overflow-x: auto;
   display: flex;
   flex-direction: column;
   border-radius: 5%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 18px 19.2px;
   /* padding: 1rem 1rem; */
 }
 
 .modal-header {
-  padding: 1.5rem 1.5rem 0 2rem;
+  padding: 0;
   display: flex;
   position: relative;
   color: rgba(0, 0, 0, 0.5);
@@ -188,7 +189,7 @@ export default {
 
 .modal-footer {
   /* padding: 15px; */
-  padding: 0 2rem 2rem 1rem;
+  padding: 0 46px 32px 0;
   display: flex;
   position: relative;
   color: rgba(0, 0, 0, 0.5);
@@ -209,9 +210,6 @@ export default {
   cursor: pointer;
   padding: 0px 20px;
 }
-.close-btn:hover {
-  opacity: 50%;
-}
 .submit {
   background-color: #ffffff;
   color: rgba(0, 0, 0, 0.5);
@@ -231,19 +229,18 @@ export default {
 .form__div {
   position: relative;
   height: 42px;
-  margin: 1rem 2rem;
+  margin: 28px 26px 0 26px;
 }
 .form__input {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 374px;
   height: 42px;
   font-size: 1rem;
   border: 1px solid #dadce0;
   border-radius: 0.5rem;
   outline: none;
-  padding: 1rem;
   background: none;
   z-index: 1;
 }
@@ -251,7 +248,7 @@ export default {
   position: absolute;
   left: 1rem;
   top: 1rem;
-  padding: 0 0.25rem;
+  
   background-color: #fff;
   color: #80868b;
   font-size: 1rem;

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="header">
-      <img id="logo" src="./assets/Teltonika.png" alt="Teltonika" />
+      <img src="./assets/Teltonika.png" alt="Teltonika" id="name">
     </div>
     <router-view />
   </div>
@@ -14,17 +14,22 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  justify-content: center;
+  align-content: center;
 }
-
-#header {
+#header { 
+  position: relative;
   height: 71px;
-  background-color: #0054a6;
-  width: auto;
-  text-align: left;
+  left: 0px;
+  top: 0px;
+  background: #0053a6;
 }
-#logo {
+#name {
+  position: relative;
+  width: 142.77px;
   height: 28px;
-  margin-top: 1.25rem;
-  margin-left: 13vw;
+  margin-top:20px;
+  margin-left: min(367px, 19vw);
+  float: left;
 }
 </style>
